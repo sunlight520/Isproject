@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ad.database">
+    <class name="com.ad.database.housing" table="t_housing">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"></column>
+            <generator class="identity"></generator>
+        </id>
+        <property name="price" type="java.lang.Integer">
+            <column name="price"></column>
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="description"></column>
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address"></column>
+        </property>
+        <set name="advertises" table="housing_advertise">
+            <key column="hid"></key>
+            <many-to-many class="com.ad.database.Advertise" column="aid"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--配置数据源-->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/lab_advertise?useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!-- C3P0-->
+        <property name="hibernate.c3p0.acquire_increment">10</property>
+        <property name="hibernate.c3p0.timeout">5000</property>
+        <property name="hibernate.c3p0.idle_test_period">10000</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">30</property>
+        <property name="hibernate.c3p0.max_statements">10</property>
+        <!--数据库方言-->
+        <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <!--打印sql语句-->
+        <property name="show_sql">true</property>
+        <!--格式化sql-->
+        <property name="format_sql">true</property>
+        <!--是否自动生成数据表-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!---->
+<!--        <mapping resource="com/ad/advertise/Accounts.hbm.xml"></mapping>-->
+<!--        <mapping resource="com/ad/advertise/Peoples.hbm.xml"></mapping>-->
+        <mapping resource="com/ad/database/Advertise.hbm.xml"></mapping>
+        <mapping resource="com/ad/database/User.hbm.xml"></mapping>
+        <mapping resource="com/ad/database/housing.hbm.xml"></mapping>
+        <mapping resource="com/ad/database/comment.hbm.xml"></mapping>
+        <mapping resource="com/ad/database/Accounts.hbm.xml"></mapping>
+        <mapping resource="com/ad/database/housing_advertise.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>
